@@ -2,7 +2,7 @@
 
 ### 
 <h2>Description</h2>
-This project is a Weather Application in Java, which consists of backend and frontend components. This weather app offers users an easy and visually appealing way to check the weather conditions for a specified location. 
+Timely To Dos is a task management application built with JavaFX, designed to help users organize and track their daily tasks efficiently. This app offers a user-friendly interface for creating, managing, and prioritizing to-do items. The project is managed using Maven for dependency management and build automation.
 
 
 1. **Task Management (TaskController.java)**:
