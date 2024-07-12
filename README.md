@@ -29,7 +29,7 @@ This project is a Weather Application in Java, which consists of backend and fro
 - <b>Java</b> 
 - <b>JFX</b>
 - <b>SQLite</b>
-- <b>Meven</b>
+- <b>Maven</b>
 
 
 
