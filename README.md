@@ -49,12 +49,16 @@ Different Task Added:  <br/>
 <img src="https://i.imgur.com/YDLPcJm.png" height="50%" width="50%" alt=""/>
 <br />
 <br />
-Searching for Iceland's Weather:  <br/>
-<img src="https://i.imgur.com/iarbZ2w.png" height="50%" width="50%" alt=""/>
+Filtering Tasks:  <br/>
+<img src="https://i.imgur.com/Qj5r5dq.png" height="50%" width="50%" alt=""/><img src="https://i.imgur.com/hu7xWdx.png" height="50%" width="50%" alt=""/>
 <br />
 <br />
-Dark Mode toggled:  <br/>
-<img src="https://i.imgur.com/QO3MYm0.png" height="50%" width="50%" alt=""/>
+Searching For Task(s):  <br/>
+<img src="https://i.imgur.com/Kb4pDDg.png" height="50%" width="50%" alt=""/>
+<br />
+<br />
+Editing a Task(Text & Color Change):  <br/>
+<img src="https://i.imgur.com/uWWbyPr.png" height="50%" width="50%" alt=""/><img src="https://i.imgur.com/L4EgCCR.png" height="50%" width="50%" alt=""/>
 <br />
 <br />
 
