@@ -42,11 +42,11 @@ Timely To Dos is a task management application built with JavaFX, designed to he
 
 <p align="center">
 Launch the app: <br/>
-<img src="https://i.imgur.com/OZGbqGC.png" height="50%" width="50%" alt=""/>
+<img src="https://i.imgur.com/72Ds619.png" height="50%" width="50%" alt=""/>
 <br />
 <br />
-Searching for New York's Weather:  <br/>
-<img src="https://i.imgur.com/KT1vy40.png" height="50%" width="50%" alt=""/>
+Different Task Added:  <br/>
+<img src="https://i.imgur.com/YDLPcJm.png" height="50%" width="50%" alt=""/>
 <br />
 <br />
 Searching for Iceland's Weather:  <br/>
