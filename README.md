@@ -61,6 +61,12 @@ Editing a Task(Text & Color Change):  <br/>
 <img src="https://i.imgur.com/uWWbyPr.png" height="50%" width="50%" alt=""/><img src="https://i.imgur.com/L4EgCCR.png" height="50%" width="50%" alt=""/>
 <br />
 <br />
+Completed Task(Check Box):  <br/>
+<img src="https://i.imgur.com/1WS0e3a.png" height="50%" width="50%" alt=""/>
+<br />
+<br />
+
+
 
  
 <!--
