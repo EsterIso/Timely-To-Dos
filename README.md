@@ -88,7 +88,7 @@ Completed Task(Check Box):  <br/>
 3. Clone the repository: `git clone [your-repo-url]`
 4. Navigate to the project directory
 5. Run `mvn clean install` to build the project
-6. Execute the jar file generated in the target directory
+6. Execute the native executable in the target/dist folder
 
  
 <!--
