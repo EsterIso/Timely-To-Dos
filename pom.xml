@@ -4,8 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.openjfx</groupId>
-    <artifactId>hellofx</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>TimelyToDos</artifactId>
+    <version>1.0.0</version>
 
     <properties>
         <lifecycle-mapping-artifactId>lifecycle-mapping</lifecycle-mapping-artifactId>
@@ -16,41 +16,77 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-controls</artifactId>
-            <version>${javafx.version}</version>
-            <classifier>win</classifier>
-        </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-fxml</artifactId>
-            <version>${javafx.version}</version>
-            <classifier>win</classifier>
-        </dependency>
-        <dependency>
-            <groupId>org.xerial</groupId>
-            <artifactId>sqlite-jdbc</artifactId>
-            <version>3.42.0.0</version>
-        </dependency>
-    </dependencies>
+    <dependency>
+        <groupId>org.xerial</groupId>
+        <artifactId>sqlite-jdbc</artifactId>
+        <version>3.42.0.0</version>
+    </dependency>
+</dependencies>
 
-    <profiles>
-        <profile>
-            <id>windows</id>
-            <activation>
-                <os>
-                    <family>windows</family>
-                </os>
-            </activation>
-            <dependencies>
-                <dependency>
-                    <groupId>org.openjfx</groupId>
-                    <artifactId>javafx-graphics</artifactId>
-                    <version>${javafx.version}</version>
-                    <classifier>win</classifier>
-                </dependency>
-            </dependencies>
+<profiles>
+    <profile>
+        <id>windows</id>
+        <activation>
+            <os>
+                <family>windows</family>
+            </os>
+        </activation>
+        <dependencies>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-controls</artifactId>
+                <version>${javafx.version}</version>
+                <classifier>win</classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-fxml</artifactId>
+                <version>${javafx.version}</version>
+                <classifier>win</classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-graphics</artifactId>
+                <version>${javafx.version}</version>
+                <classifier>win</classifier>
+            </dependency>
+        </dependencies>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.panteleyev</groupId>
+                        <artifactId>jpackage-maven-plugin</artifactId>
+                        <version>1.4.0</version>
+                        <configuration>
+                            <name>TimelyToDos</name>
+                            <appVersion>1.0.0</appVersion>
+                            <vendor>EsterIso</vendor>
+                            <winUpgradeUuid>2a529684-7857-458a-9e62-0e2c992acdc7</winUpgradeUuid>
+                            <icon>${project.basedir}/src/main/resources/icons/TimelyToDos.ico</icon>
+                            <destination>target/dist</destination>
+                            <module>org.openjfx.hellofx/${main.class}</module>
+                            <mainClass>${main.class}</mainClass>
+                            <javaOptions>
+                                <option>-Dfile.encoding=UTF-8</option>
+                            </javaOptions>
+                            <winDirChooser>true</winDirChooser>
+                            <winMenu>true</winMenu>
+                            <winMenuGroup>HelloFX</winMenuGroup>
+                            <input>${project.build.directory}</input>
+                            <modulePath>${project.build.directory}/${project.build.finalName}.jar${path.separator}${project.build.directory}/libs</modulePath>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>win</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jpackage</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
         <profile>
             <id>mac</id>
@@ -60,13 +96,64 @@
                 </os>
             </activation>
             <dependencies>
-                <dependency>
-                    <groupId>org.openjfx</groupId>
-                    <artifactId>javafx-graphics</artifactId>
-                    <version>${javafx.version}</version>
-                    <classifier>mac</classifier>
-                </dependency>
-            </dependencies>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-controls</artifactId>
+                <version>${javafx.version}</version>
+                <classifier>mac</classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-fxml</artifactId>
+                <version>${javafx.version}</version>
+                <classifier>mac</classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-graphics</artifactId>
+                <version>${javafx.version}</version>
+                <classifier>mac</classifier>
+            </dependency>
+        </dependencies>
+            <build>
+                <plugins>
+                    <plugin>
+					    <groupId>org.panteleyev</groupId>
+					    <artifactId>jpackage-maven-plugin</artifactId>
+					    <version>1.4.0</version>
+					    <configuration>
+					        <name>TimelyToDos</name>
+					        <appVersion>1.0.0</appVersion>
+					        <vendor>EsterIso</vendor>
+					        <destination>target/dist</destination>
+					        <module>org.openjfx.hellofx/${main.class}</module>
+					        <mainClass>${main.class}</mainClass>
+					        <javaOptions>
+					            <option>-Dfile.encoding=UTF-8</option>
+					        </javaOptions>
+					        <winDirChooser>true</winDirChooser>
+					        <winMenu>true</winMenu>
+					        <winMenuGroup>TimelyToDos</winMenuGroup>
+					        <icon>${project.basedir}/src/main/resources/icons/TimelyToDos.ico</icon>
+					        <winUpgradeUuid>2a529684-7857-458a-9e62-0e2c992acdc7</winUpgradeUuid>
+					        <runtimeImage>${java.home}</runtimeImage>
+					        <modulePaths>
+					            <modulePath>${project.build.directory}/${project.build.finalName}.jar</modulePath>
+					            <modulePath>${project.build.directory}/libs</modulePath>
+					        </modulePaths>
+					    </configuration>
+					    <executions>
+					        <execution>
+					            <id>win</id>
+					            <phase>package</phase>
+					            <goals>
+					                <goal>jpackage</goal>
+					            </goals>
+					        </execution>
+					    </executions>
+					</plugin>
+                </plugins>
+            </build>
         </profile>
         <profile>
             <id>unix</id>
@@ -77,13 +164,59 @@
                 </os>
             </activation>
             <dependencies>
-                <dependency>
-                    <groupId>org.openjfx</groupId>
-                    <artifactId>javafx-graphics</artifactId>
-                    <version>${javafx.version}</version>
-                    <classifier>linux</classifier>
-                </dependency>
-            </dependencies>
+            	<dependency>
+	                <groupId>org.openjfx</groupId>
+	                <artifactId>javafx-controls</artifactId>
+	                <version>${javafx.version}</version>
+	                <classifier>linux</classifier>
+	            </dependency>
+	            <dependency>
+	                <groupId>org.openjfx</groupId>
+	                <artifactId>javafx-fxml</artifactId>
+	                <version>${javafx.version}</version>
+	                <classifier>linux</classifier>
+	            </dependency>
+	            <dependency>
+	                <groupId>org.openjfx</groupId>
+	                <artifactId>javafx-graphics</artifactId>
+	                <version>${javafx.version}</version>
+	                <classifier>linux</classifier>
+	            </dependency>
+	        </dependencies>	
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.panteleyev</groupId>
+                        <artifactId>jpackage-maven-plugin</artifactId>
+                        <version>1.4.0</version>
+                        <configuration>
+                            <name>TimelyToDos</name>
+                            <appVersion>1.0.0</appVersion>
+                            <vendor>EsterIso</vendor>
+                            <icon>${project.basedir}/src/main/resources/icons/TimelyToDos.png</icon>
+                            <destination>target/dist</destination>
+                            <module>org.openjfx.hellofx/${main.class}</module>
+                            <mainClass>${main.class}</mainClass>
+                            <javaOptions>
+                                <option>-Dfile.encoding=UTF-8</option>
+                            </javaOptions>
+                            <linuxPackageName>timelytodos</linuxPackageName>
+                            <linuxMenuGroup>Utilities</linuxMenuGroup>
+                            <input>${project.build.directory}</input>
+                            <modulePath>${project.build.directory}/${project.build.finalName}.jar${path.separator}${project.build.directory}/libs</modulePath>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>linux</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jpackage</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
     </profiles>
 
@@ -159,42 +292,9 @@
                     </archive>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.panteleyev</groupId>
-                <artifactId>jpackage-maven-plugin</artifactId>
-                <version>1.4.0</version>
-                <configuration>
-                    <name>TimelyToDos</name>
-                    <appVersion>1.0.0</appVersion>
-                    <vendor>EsterIso</vendor>
-                    <winUpgradeUuid>2a529684-7857-458a-9e62-0e2c992acdc7</winUpgradeUuid>
-                    <icon>${project.basedir}/src/main/resources/icons/TimelyToDos.ico</icon>
-                    <destination>target/dist</destination>
-                    <module>org.openjfx.hellofx/${main.class}</module>
-                    <mainClass>${main.class}</mainClass>
-                    <javaOptions>
-                        <option>-Dfile.encoding=UTF-8</option>
-                    </javaOptions>
-                    <winDirChooser>true</winDirChooser>
-                    <winMenu>true</winMenu>
-                    <winMenuGroup>HelloFX</winMenuGroup>
-                    <input>${project.build.directory}</input>
-                    <modulePath>${project.build.directory}/${project.build.finalName}.jar${path.separator}${project.build.directory}/libs</modulePath>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>win</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>jpackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
         <pluginManagement>
             <plugins>
-                <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
                 <plugin>
                     <groupId>org.eclipse.m2e</groupId>
                     <artifactId>lifecycle-mapping</artifactId>
