@@ -52,6 +52,7 @@ Timely To Dos is a task management application built with JavaFX, designed to he
 
 - <b>Filter task by completion</b>
 - <b>Delete all task</b>
+- <b>Improve user experience</b>
 
 <h2>Program walk-through:</h2>
 
