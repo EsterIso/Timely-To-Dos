@@ -82,7 +82,13 @@ Completed Task(Check Box):  <br/>
 <br />
 <br />
 
-
+## Installation
+1. Ensure you have Java JDK 19 or later installed
+2. Install Maven if not already present
+3. Clone the repository: `git clone [your-repo-url]`
+4. Navigate to the project directory
+5. Run `mvn clean install` to build the project
+6. Execute the jar file generated in the target directory
 
  
 <!--
