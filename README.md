@@ -32,11 +32,26 @@ Timely To Dos is a task management application built with JavaFX, designed to he
 - <b>Maven</b>
 
 
-
 <h2>Environments Used </h2>
 
 - <b>Windows 11</b>
 - <b>Eclipse IDE</b>
+
+<h2> Features </h2>
+
+- <b>Add, edit, and delete tasks</b>
+- <b>Color-code tasks for organization</b>
+- <b>Mark Task as complete or incomplete</b>
+- <b>Persistent storage of tasks using SQLite</b>
+- <b>Intuitive and responsive user interface</b>
+- <b>Searching for task</b>
+- <b>Filtering task by color</b>
+- <b>Maven-based project structure for easy dependency management and building</b>
+
+<h2> Future Enhancements/Features </h2>
+
+- <b>Filter task by completion</b>
+- <b>Delete all task</b>
 
 <h2>Program walk-through:</h2>
 
