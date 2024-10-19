@@ -1,1 +1,37 @@
 /target/
+# Local Maven repository
+.m2/
+local-repo/
+# Compiled class files
+/target/
+
+# Maven Wrapper files
+.mvn/
+!/.mvn/wrapper/maven-wrapper.properties
+mvnw
+mvnw.cmd
+
+# Logs
+*.log
+
+# IDE Files
+/.idea/
+/*.iml
+/.project
+/.classpath
+/.settings/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Temporary Files
+*.tmp
+*.bak
+*.swp
+*~
+
+.classpath
+.project
+.settings/
+.factorypath

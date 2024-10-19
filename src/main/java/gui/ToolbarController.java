@@ -37,7 +37,16 @@ public class ToolbarController {
             performSearch(searchTerm);
             popup.hide();
         });
-
+        
+        //event handler to trigger search when pressing Enter
+        searchTextField.setOnKeyPressed(event -> {
+            if (event.getCode() == javafx.scene.input.KeyCode.ENTER) {
+                String searchTerm = searchTextField.getText();
+                performSearch(searchTerm);
+                popup.hide();
+            }
+        });
+        
         HBox searchBox = new HBox(10, searchTextField, searchButtonPopup);
         searchBox.setPadding(new Insets(10));
 
@@ -56,24 +65,37 @@ public class ToolbarController {
     }
 
     private void performSearch(String searchTerm) {
-        // This might involve iterating through tasks and highlighting matches
+        // First, reset the highlighting for all tasks
         for (javafx.scene.Node node : mainWindow.getTasksDisplayBox().getChildren()) {
             if (node instanceof HBox) {
                 HBox taskPane = (HBox) node;
-                // Assuming the second child of HBox is the TextArea containing the task text
-                if (taskPane.getChildren().size() > 1 && taskPane.getChildren().get(1) instanceof javafx.scene.control.TextArea) {
-                    javafx.scene.control.TextArea taskArea = (javafx.scene.control.TextArea) taskPane.getChildren().get(1);
+                if (taskPane.getChildren().size() > 1 && taskPane.getChildren().get(1) instanceof TextArea) {
+                    // Reset all task styles
+                    taskPane.setStyle("");
+                }
+            }
+        }
+
+        // If the search term is blank, do not apply any highlights and return
+        if (searchTerm == null || searchTerm.trim().isEmpty()) {
+            return; // No highlighting needed, exit the method
+        }
+
+        // Iterate through tasks and highlight matches
+        for (javafx.scene.Node node : mainWindow.getTasksDisplayBox().getChildren()) {
+            if (node instanceof HBox) {
+                HBox taskPane = (HBox) node;
+                if (taskPane.getChildren().size() > 1 && taskPane.getChildren().get(1) instanceof TextArea) {
+                    TextArea taskArea = (TextArea) taskPane.getChildren().get(1);
                     if (taskArea.getText().toLowerCase().contains(searchTerm.toLowerCase())) {
                         // Highlight the matching task
                         taskPane.setStyle("-fx-background-color: #fff68f;");
-                    } else {
-                        // Reset the style for non-matching tasks
-                        taskPane.setStyle("");
                     }
                 }
             }
         }
     }
+
     private void openFilterPopup(Button filterButton) {
         Popup popup = new Popup();
 

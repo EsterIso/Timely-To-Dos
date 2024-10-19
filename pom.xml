@@ -5,7 +5,7 @@
 
     <groupId>org.openjfx</groupId>
     <artifactId>TimelyToDos</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 
     <properties>
         <lifecycle-mapping-artifactId>lifecycle-mapping</lifecycle-mapping-artifactId>
@@ -59,7 +59,7 @@
                         <version>1.4.0</version>
                         <configuration>
                             <name>TimelyToDos</name>
-                            <appVersion>1.0.0</appVersion>
+                            <appVersion>1.1.0</appVersion>
                             <vendor>EsterIso</vendor>
                             <winUpgradeUuid>2a529684-7857-458a-9e62-0e2c992acdc7</winUpgradeUuid>
                             <icon>${project.basedir}/src/main/resources/icons/TimelyToDos.ico</icon>
@@ -123,7 +123,7 @@
 					    <version>1.4.0</version>
 					    <configuration>
 					        <name>TimelyToDos</name>
-					        <appVersion>1.0.0</appVersion>
+					        <appVersion>1.1.0</appVersion>
 					        <vendor>EsterIso</vendor>
 					        <destination>target/dist</destination>
 					        <module>org.openjfx.hellofx/${main.class}</module>
@@ -191,7 +191,7 @@
                         <version>1.4.0</version>
                         <configuration>
                             <name>TimelyToDos</name>
-                            <appVersion>1.0.0</appVersion>
+                            <appVersion>1.1.0</appVersion>
                             <vendor>EsterIso</vendor>
                             <icon>${project.basedir}/src/main/resources/icons/TimelyToDos.png</icon>
                             <destination>target/dist</destination>

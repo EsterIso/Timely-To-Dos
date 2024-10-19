@@ -45,7 +45,7 @@ public class App extends Application {
             Image icon = new Image(getClass().getResourceAsStream("/icons/TimelyToDos.png"));
             primaryStage.getIcons().add(icon);
             primaryStage.setScene(scene);
-            primaryStage.setResizable(false);
+            primaryStage.setResizable(true);
             
             primaryStage.setOnCloseRequest(event -> {
                 Platform.exit();
